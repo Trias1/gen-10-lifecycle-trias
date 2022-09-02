@@ -3,21 +3,27 @@ import "../statte/lf.css";
 const Api = [
   {
     id: 1,
-    nama: "gelas",
-    harga: 3000,
-    stoct: 50,
+    nama: "Seprai",
+    harga: 80000,
+    stoct: 5,
   },
   {
     id: 2,
-    nama: "piring",
-    harga: 5000,
-    stoct: 50,
+    nama: "Bantal",
+    harga: 25000,
+    stoct: 5,
   },
   {
     id: 3,
-    nama: "plastik",
-    harga: 1000,
-    stoct: 50,
+    nama: "Selimut",
+    harga: 50000,
+    stoct: 5,
+  },
+  {
+    id: 4,
+    nama: "Kasur",
+    harga: 1000000,
+    stoct: 5,
   },
 ];
 
