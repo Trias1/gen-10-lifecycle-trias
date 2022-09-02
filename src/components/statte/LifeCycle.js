@@ -78,7 +78,7 @@ const LifeCycle = () => {
             <tr key={key}>
               <td>{key+1}</td>
               <td>{products.nama}</td>
-              <td>{products.harga}</td>
+              <td>Rp{products.harga}</td>
               <td>{products.stoct}</td>
               <td>
                 <button onClick={() => tambah(products)}>Tambah</button>
@@ -104,7 +104,7 @@ const LifeCycle = () => {
             <tr key={id}>
               <td>{id+1}</td>
               <td>{cart.nama}</td>
-              <td>{cart.harga}</td>
+              <td>Rp{cart.harga}</td>
               <td>{cart.stoct}</td>
               <td>
                 <button onClick={() => hapus(cart)}>Hapus</button>
