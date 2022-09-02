@@ -1,5 +1,5 @@
 import React from "react";
-import '../statte/lf.css'
+import "../statte/lf.css";
 const Api = [
   {
     nama: "gelas",
@@ -32,16 +32,16 @@ export default class Lifecycletugas extends React.Component {
     this.setState({ products: Api });
   }
 
-    componentDidUpdate(prevProps, prevState) {
-      if (prevState.cartsitem.length !== this.state.cartsitem.length) {
-        let totalHarga = 0;
-        for (let cart of this.state.cartsitem) {
-          totalHarga = totalHarga + cart.harga;
-        }
-
-        this.setState({ totalHarga: totalHarga });
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.cartsitem.length !== this.state.cartsitem.length) {
+      let totalHarga = 0;
+      for (let cart of this.state.cartsitem) {
+        totalHarga = totalHarga + cart.harga;
       }
+
+      this.setState({ totalHarga: totalHarga });
     }
+  }
 
   tambah(produks) {
     console.log("masuk");
@@ -51,9 +51,9 @@ export default class Lifecycletugas extends React.Component {
   }
   hapus(item) {
     console.log("hapus");
-    const keranjanghps = [...this.state.cartsitem]
-    keranjanghps.splice(keranjanghps.indexOf(item),1)
-    this.setState({cartsitem: keranjanghps})
+    const keranjanghps = [...this.state.cartsitem];
+    keranjanghps.splice(keranjanghps.indexOf(item), 1);
+    this.setState({ cartsitem: keranjanghps });
   }
 
   render() {
@@ -71,10 +71,10 @@ export default class Lifecycletugas extends React.Component {
         <table>
           <thead>
             <tr>
-              <th >Nama</th>
-              <th >Barang</th>
-              <th >Stok</th>
-              <th >Tambah</th>
+              <th>Nama</th>
+              <th>Barang</th>
+              <th>Stok</th>
+              <th>Tambah</th>
             </tr>
           </thead>
           {this.state.products.map((barang) => (
@@ -83,7 +83,9 @@ export default class Lifecycletugas extends React.Component {
                 <td>{barang.nama}</td>
                 <td>{barang.harga}</td>
                 <td>{barang.stoct}</td>
-                <td><button onClick={() => this.tambah(barang)}>Tambah</button></td>
+                <td>
+                  <button onClick={() => this.tambah(barang)}>Tambah</button>
+                </td>
               </tr>
             </tbody>
           ))}
@@ -92,10 +94,10 @@ export default class Lifecycletugas extends React.Component {
         <table>
           <thead>
             <tr>
-              <th >Nama</th>
-              <th >Barang</th>
-              <th >Stok</th>
-              <th >Hapus</th>
+              <th>Nama</th>
+              <th>Barang</th>
+              <th>Stok</th>
+              <th>Hapus</th>
             </tr>
           </thead>
           {this.state.cartsitem.map((cart) => (
@@ -104,13 +106,14 @@ export default class Lifecycletugas extends React.Component {
                 <td>{cart.nama}</td>
                 <td>{cart.harga}</td>
                 <td>{cart.stoct}</td>
-                <td><button onClick={() => this.hapus(cart)}>Hapus</button></td>
+                <td>
+                  <button onClick={() => this.hapus(cart)}>Hapus</button>
+                </td>
               </tr>
             </tbody>
           ))}
         </table>
         <p>Total Harga: {this.state.totalHarga}</p>
-        
       </>
     );
   }
